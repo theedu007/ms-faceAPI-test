@@ -18,5 +18,13 @@
   "homepage": "https://github.com/theedu007/ms-faceAPI-test#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "multer": "^1.4.2",
+    "node-fetch": "^2.6.0"
+  },
+  "faceAPI": {
+    "key": "95d72865415e4380940e1048f17dde10",
+    "endpoint": "https://edu-face-endpoint-azure.cognitiveservices.azure.com/face/v1.0/detect?"
   }
 }
