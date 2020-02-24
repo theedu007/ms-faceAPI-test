@@ -1,8 +1,9 @@
 const {googleVisionAPI} = require("../../package.json");
 const fetch = require('node-fetch'); 
 const url = googleVisionAPI.endpoint + googleVisionAPI.key;
+const {drawRectaglesOverImage}  = require('./drawRectangle');
 
-const callFaceApi = (binaryImage) => {
+const callFaceApi = (binaryImage, imageBuffer) => {
 
     const imageObj = {
         image: {
@@ -23,8 +24,9 @@ const callFaceApi = (binaryImage) => {
     const apiCall = fetch(url, {method: "POST", body: JSON.stringify(requestBody)})
     .then(res => res.json())
     .then(json => {
-        console.log(json)
-        debugger;
+        const responseArray = json.responses;
+        const faceAnnotationsData = responseArray[0].faceAnnotations;
+        drawRectaglesOverImage(faceAnnotationsData, imageBuffer);
     })
     .catch(console.error);
 };

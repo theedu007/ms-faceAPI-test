@@ -25,7 +25,7 @@
     "node-fetch": "^2.6.0"
   },
   "googleVisionAPI": {
-    "key": "AIzaSyBvvbB34vj-0Vi9uKvmhioHydZ6rjXQs5Q",
+    "key": "my-api-key",
     "endpoint": "https://vision.googleapis.com/v1/images:annotate?key="
   }
 }

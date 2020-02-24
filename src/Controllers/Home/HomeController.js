@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
 
 router.post("/getFace", upload.single('image'), (req, res) => {
     const faceImage = req.file.buffer.toString("base64");
-    callFaceApi(faceImage);  
+    callFaceApi(faceImage, req.file.buffer);  
 });
 
 module.exports = router;
