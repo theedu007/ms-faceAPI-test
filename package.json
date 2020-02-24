@@ -17,14 +17,15 @@
   },
   "homepage": "https://github.com/theedu007/ms-faceAPI-test#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "gm": "^1.23.1"
   },
   "devDependencies": {
     "multer": "^1.4.2",
     "node-fetch": "^2.6.0"
   },
-  "faceAPI": {
-    "key": "95d72865415e4380940e1048f17dde10",
-    "endpoint": "https://edu-face-endpoint-azure.cognitiveservices.azure.com/face/v1.0/detect?"
+  "googleVisionAPI": {
+    "key": "AIzaSyBvvbB34vj-0Vi9uKvmhioHydZ6rjXQs5Q",
+    "endpoint": "https://vision.googleapis.com/v1/images:annotate?key="
   }
 }
