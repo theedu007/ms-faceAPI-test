@@ -26,9 +26,10 @@ const callFaceApi = (binaryImage, imageBuffer) => {
     .then(json => {
         const responseArray = json.responses;
         const faceAnnotationsData = responseArray[0].faceAnnotations;
-        drawRectaglesOverImage(faceAnnotationsData, imageBuffer);
+        return drawRectaglesOverImage(faceAnnotationsData, imageBuffer);
     })
     .catch(console.error);
+    return apiCall;
 };
 
 module.exports = {callFaceApi};

@@ -12,9 +12,20 @@ router.get("/", (req, res) => {
     res.sendFile(indexfile);
 });
 
-router.post("/getFace", upload.single('image'), (req, res) => {
+router.post("/getFace", upload.single('image'), async (req, res) => {
     const faceImage = req.file.buffer.toString("base64");
-    callFaceApi(faceImage, req.file.buffer);  
+    callFaceApi(faceImage, req.file.buffer).then(response => {
+        response.toBuffer((err, buffer) => {
+            if(err) console.log(err)
+            res.writeHead(200, {
+                'Content-Type': 'image/png',
+                'Content-Length': buffer.length
+              });
+              res.end(buffer); 
+        });
+    })
+    .catch(console.error());
 });
+
 
 module.exports = router;

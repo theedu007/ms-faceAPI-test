@@ -1,5 +1,4 @@
 const gm = require('gm');
-const fs = require('fs');
 
 const drawRectaglesOverImage = (faceAnnotationsArray, imageBuffer) => {
     const facesData = faceAnnotationsArray;
@@ -18,11 +17,7 @@ const drawRectaglesOverImage = (faceAnnotationsArray, imageBuffer) => {
         .drawPolygon(point[0], point[1], point[2], point[3])
     });
 
-    image.write("/test/hola1.png", function (err) {
-        if (err) return console.log(err);
-        console.log('Created an image from a Buffer!');
-    });
-
+    return image;
 };
 
 module.exports = {drawRectaglesOverImage}
