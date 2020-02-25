@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title></title>
+    <script src="getImage.js"></script>
 </head>
 <body>
-    <form method="POST" action="/getface" enctype="multipart/form-data">
+    <div id="inputs">
         <input type="file" name="image" id="image">
-        <input type="submit" value="Subir">
-    </form>
+        <input type="button" value="Subir" onclick="getImage()">
+    </div>
+    <div id="imageDiv">
+
+    </div>
 </body>
 </html>
