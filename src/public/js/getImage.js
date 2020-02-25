@@ -12,5 +12,6 @@ const getImage = () => {
         const imgHtml = document.createElement("img");
         imgHtml.src = URL.createObjectURL(blobResponse);
         document.querySelector("#imageDiv").appendChild(imgHtml);
-    });
+    })
+    .catch(console.error());
 }
